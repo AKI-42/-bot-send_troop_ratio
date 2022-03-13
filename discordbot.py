@@ -29,9 +29,9 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 	cav_low_t = math.floor((cav_ratio*uni) - cav_heigh_t)
 
 	embed = discord.Embed(
-		title="死役 " + math.floor(10 - (main*10)),
+		title="死役 " + str(math.floor(10 - (main*10))),
 		color=0x00ff00,
-		description=ratio + " " + max_size,
+		description=str(ratio) + " " + str(max_size),
 		)
 	embed.add_field(name="歩兵",value=inf_heigh_t,value=inf_low_t)
 	embed.add_field(name="弓兵",value=range_heigh_t,value=range_low_t)
