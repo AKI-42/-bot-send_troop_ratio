@@ -33,14 +33,15 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 		color=0x00ff00,
 		description=str(ratio) + " " + str(max_size),
 		)
-	embed.add_field(name="歩兵",value=inf_heigh_t,value=inf_low_t)
-	embed.add_field(name="弓兵",value=range_heigh_t,value=range_low_t)
-	embed.add_field(name="騎兵",value=cav_heigh_t,value=cav_low_t)
-
 	await ctx.send(embed=embed)
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
+
+""" 	embed.add_field(name="歩兵",value=inf_heigh_t,value=inf_low_t)
+	embed.add_field(name="弓兵",value=range_heigh_t,value=range_low_t)
+	embed.add_field(name="騎兵",value=cav_heigh_t,value=cav_low_t) """
+
 
 """ 	await ctx.send(f"死役 {math.floor(10 - (main*10))}割\n\
 歩兵  {inf_heigh_t:<10,}死役  {inf_low_t:<10,}  |  合計  {inf_heigh_t+inf_low_t:>10,}\n\
