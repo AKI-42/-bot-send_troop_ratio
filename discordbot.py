@@ -30,9 +30,9 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 	cav_low_t = math.floor((cav_ratio*uni) - cav_heigh_t)
 
 
-	sentense_inf = f"{inf_heigh_t:<10,}死役  {inf_low_t:<10,}\n合計  {inf_heigh_t+inf_low_t:>10,}"
-	sentense_range = f"{range_heigh_t:<10,}死役  {range_low_t:<10,}\n合計  {range_heigh_t+range_low_t:>10,}"
-	sentense_cav = f"{cav_heigh_t:<10,}死役  {cav_low_t:<10,}\n合計  {cav_heigh_t+cav_low_t:>10,}"
+	sentense_inf = f"{inf_heigh_t:<10,}死役:  {inf_low_t:<10,}  |  合計:  {inf_heigh_t+inf_low_t:>10,}"
+	sentense_range = f"{range_heigh_t:<10,}死役:  {range_low_t:<10,}  |  合計:  {range_heigh_t+range_low_t:>10,}"
+	sentense_cav = f"{cav_heigh_t:<10,}死役:  {cav_low_t:<10,}  |  合計:  {cav_heigh_t+cav_low_t:>10,}"
 
 	embed = discord.Embed(
 		title="比率 : " + str(info) + "   派兵数 : " + str(max_size),
