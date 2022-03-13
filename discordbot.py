@@ -30,21 +30,18 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 	cav_low_t = math.floor((cav_ratio*uni) - cav_heigh_t)
 
 
-	sentense = f"死役 {math.floor(10 - (main*10))}割\n\
-歩兵  {inf_heigh_t:<10,}死役  {inf_low_t:<10,}  |  合計  {inf_heigh_t+inf_low_t:>10,}\n\
-弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
-騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}"
+	sentense_inf = f"{inf_heigh_t:<10,}死役  {inf_low_t:<10,}  |  合計  {inf_heigh_t+inf_low_t:>10,}"
+	sentense_range = f"{range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}"
+	sentense_cav = f"{cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}"
 
-	await ctx.send(sentense)
 	embed = discord.Embed(
 		title="比率 : " + str(info) + "   派兵数 : " + str(max_size),
 		color=0x00ff00,
 		description="死役 " + str(math.floor(10 - (main*10))) + "割"
 		)
-	embed.add_field(name="歩兵",value=sentense)
-#	embed.add_field(name="歩兵",value=str(inf_heigh_t))
-#	embed.add_field(name="弓兵",value=str(range_heigh_t))
-#	embed.add_field(name="騎兵",value=str(cav_heigh_t))
+	embed.add_field(name="歩兵",value=sentense_inf)
+	embed.add_field(name="弓兵",value=sentense_range)
+	embed.add_field(name="騎兵",value=sentense_cav)
 	await ctx.send(embed=embed)
 
 token = getenv('DISCORD_BOT_TOKEN')
