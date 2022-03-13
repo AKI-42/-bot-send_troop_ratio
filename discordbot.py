@@ -60,10 +60,10 @@ async def test1(ctx, *arg):
 弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
 
+@bot.command()
 async def test(ctx, *args):
     arguments = ', '.join(args)
     await ctx.send(f'{len(args)} arguments: {arguments}')
-
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
