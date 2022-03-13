@@ -28,11 +28,6 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 	cav_heigh_t = math.floor((cav_ratio*uni)*main)
 	cav_low_t = math.floor((cav_ratio*uni) - cav_heigh_t)
 
-	await ctx.send(f"死役 {math.floor(10 - (main*10))}割\n\
-歩兵  {inf_heigh_t:<10,}死役  {inf_low_t:<10,}  |  合計  {inf_heigh_t+inf_low_t:>10,}\n\
-弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
-騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
-
 	embed = discord.Embed(
 		title="死役 " + math.floor(10 - (main*10)),
 		color=0x00ff00,
@@ -46,3 +41,8 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
+
+""" 	await ctx.send(f"死役 {math.floor(10 - (main*10))}割\n\
+歩兵  {inf_heigh_t:<10,}死役  {inf_low_t:<10,}  |  合計  {inf_heigh_t+inf_low_t:>10,}\n\
+弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
+騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}") """
