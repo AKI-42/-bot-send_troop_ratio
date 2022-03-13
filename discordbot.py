@@ -34,14 +34,15 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 		color=0x00ff00,
 		description="比率 : "str(info) + " 派兵数 : " + str(max_size),
 		)
-		embed.add_field(name="歩兵",value=str(inf_heigh_t),value=str(value=inf_low_t))
 	await ctx.send(embed=embed)
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
 
 
-""" 	embed.add_field(name="弓兵",value=range_heigh_t,value=range_low_t)
+"""
+	embed.add_field(name="歩兵",value=str(inf_heigh_t),value=str(value=inf_low_t))
+ 	embed.add_field(name="弓兵",value=range_heigh_t,value=range_low_t)
 	embed.add_field(name="騎兵",value=cav_heigh_t,value=cav_low_t)
  """
 
