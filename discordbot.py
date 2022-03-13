@@ -32,6 +32,7 @@ async def ratio(ctx, ratio: int, max_size: int):
 @bot.command()
 async def test1(ctx, *args: int):
 
+	await ctx.send(type(args))
 	inf_ratio = math.floor(args[0]/100)
 	args[0] = math.floor(args[0]%100)
 	range_ratio = math.floor(args[0]/10)
