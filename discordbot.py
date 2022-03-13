@@ -33,17 +33,16 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
 
-@bot.command()
-async def test(ctx):
-	embed = discord.Embed( # Embedを定義する
-    	title="Example Embed",# タイトル
-        color=0x00ff00, # フレーム色指定(今回は緑)
-        description="Example Embed for Advent Calendar", # Embedの説明文 必要に応じて
+	embed = discord.Embed(
+    	title="死役 " + math.floor(10 - (main*10))
+        color=0x00ff00,
+        description=ratio + " " + max_size,
         )
-	embed.add_field(name="フィールド1",value="値1") # フィールドを追加。
-	embed.add_field(name="フィールド2",value="値2")
+	embed.add_field(name="歩兵",value=inf_heigh_t,value=inf_low_t)
+	embed.add_field(name="弓兵",value=range_heigh_t,value=range_low_t)
+	embed.add_field(name="騎兵",value=cav_heigh_t,value=cav_low_t)
 
-	await ctx.send(embed=embed) # embedの送信には、embed={定義したembed名}
+	await ctx.send(embed=embed)
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
