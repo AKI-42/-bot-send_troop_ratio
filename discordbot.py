@@ -34,7 +34,7 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 		color=0x00ff00,
 		description="死役 " + str(math.floor(10 - (main*10))) + "割"
 		)
-	embed.add_field(name="歩兵",value=str(inf_heigh_t),value=str(value=inf_low_t))
+	embed.add_field(name="歩兵",value="test")
 	await ctx.send(embed=embed)
 
 token = getenv('DISCORD_BOT_TOKEN')
