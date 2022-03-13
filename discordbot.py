@@ -30,7 +30,7 @@ async def ratio(ctx, ratio: int, max_size: int):
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
 
 @bot.command()
-async def test(ctx, *arg):
+async def test1(ctx, *arg):
 
 	inf_ratio = math.floor(arg[0]/100)
 	arg[0] = math.floor(arg[0]%100)
@@ -60,9 +60,9 @@ async def test(ctx, *arg):
 弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
 
-async def test1(ctx, *args):
-	await ctx.send("タプル :" + args)
-	await ctx.send(f'{len(args)} arguments: {args}')
+async def test(ctx, *args):
+    arguments = ', '.join(args)
+    await ctx.send(f'{len(args)} arguments: {arguments}')
 
 
 token = getenv('DISCORD_BOT_TOKEN')
