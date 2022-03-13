@@ -46,16 +46,9 @@ async def embed_test(ctx):
                      url="https://repo.exapmle.com/bot", # titleのurlのようにnameをリンクにできる。botのWebサイトとかGithubとか
                      icon_url=client.user.avatar_url # Botのアイコンを設定してみる
                      )
-
-	embed.set_thumbnail(url="https://image.example.com/thumbnail.png") # サムネイルとして小さい画像を設定できる
-
-	embed.set_image(url="https://image.example.com/main.png") # 大きな画像タイルを設定できる
-
 	embed.add_field(name="フィールド１",value="値１") # フィールドを追加。
 	embed.add_field(name="フィールド２",value="値２")
 
-	embed.set_footer(text="made by nashiroaoi", # フッターには開発者の情報でも入れてみる
-                     icon_url="https://dev.exapmple.com/profile.png")
 	await ctx.send(embed=embed) # embedの送信には、embed={定義したembed名}
 
 token = getenv('DISCORD_BOT_TOKEN')
