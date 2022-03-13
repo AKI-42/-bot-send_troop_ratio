@@ -60,9 +60,9 @@ async def test(ctx, *arg):
 弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
 
-async def test1(ctx, *arg):
-	await ctx.send("タプル :" + arg)
-	await ctx.send("要素1 :" + arg[0])
+async def test1(ctx, *args):
+	await ctx.send("タプル :" + args)
+	await ctx.send(f'{len(args)} arguments: {args}')
 
 
 token = getenv('DISCORD_BOT_TOKEN')
