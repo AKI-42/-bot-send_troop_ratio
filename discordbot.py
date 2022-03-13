@@ -34,32 +34,31 @@ async def ratio(ctx, ratio: int, max_size: int):
 @bot.command()
 async def test1(ctx, *args: int):
 
-	await ctx.send("test1")
+	
 	ratio_num = args[0]
 	inf_ratio = math.floor(ratio_num/100)
 	ratio_num = math.floor(ratio_num%100)
 	range_ratio = math.floor(ratio_num/10)
 	cav_ratio = ratio_num % 10
-	await ctx.send("test2")
+	
 	total = inf_ratio + range_ratio + cav_ratio
 	uni = args[1] / total
-	await ctx.send("test3")
+	
 	if len(args) == 2:
 		main_troop__ratio = 0.6
 	elif len(args) == 3:
 		main_troop_ratio = args[2] / 10
-	await ctx.send("test4")
+	
 	sac_troop_ratio = 1 - main_troop__ratio
-	await ctx.send("test5")
+	
 	inf_heigh_t = math.floor((inf_ratio*uni)*main_troop__ratio)
 	inf_low_t = math.floor((inf_ratio*uni)*sac_troop_ratio)
-	await ctx.send("test6")
+	
 	range_heigh_t = math.floor((range_ratio*uni)*main_troop__ratio)
 	range_low_t = math.floor((range_ratio*uni)*sac_troop_ratio)
-	await ctx.send("test7")
-	cav_heigh_t = math.floor((cav_ratio*uni)*main_troop_ratio)
-	cav_low_t = math.floor((cav_ratio*uni)*sac_troop_ratio)
-	await ctx.send("test8")
+	
+	cav_heigh_t = 1
+	cav_low_t = 1
 	await ctx.send(f"歩兵  {inf_heigh_t:<10,}死役  {inf_low_t:<10,}  |  合計  {inf_heigh_t+inf_low_t:>10,}\n\
 弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
@@ -74,8 +73,5 @@ async def test(ctx, *args):
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
 
-
-""" 	inf_ratio = math.floor(args[0]/100)
-	args[0] = math.floor(args[0]%100)
-	range_ratio = math.floor(args[0]/10)
-	cav_ratio = args[0] % 10 """
+""" 	cav_heigh_t = math.floor((cav_ratio*uni)*main_troop_ratio)
+	cav_low_t = math.floor((cav_ratio*uni)*sac_troop_ratio """)
