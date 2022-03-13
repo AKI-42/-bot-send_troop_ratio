@@ -34,20 +34,14 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
 
 @bot.command()
-async def embed_test(ctx):
-
+async def test(ctx):
 	embed = discord.Embed( # Embedを定義する
     	title="Example Embed",# タイトル
         color=0x00ff00, # フレーム色指定(今回は緑)
         description="Example Embed for Advent Calendar", # Embedの説明文 必要に応じて
-        url="https://example.com" # これを設定すると、タイトルが指定URLへのリンクになる
         )
-	embed.set_author(name=client.user, # Botのユーザー名
-                     url="https://repo.exapmle.com/bot", # titleのurlのようにnameをリンクにできる。botのWebサイトとかGithubとか
-                     icon_url=client.user.avatar_url # Botのアイコンを設定してみる
-                     )
-	embed.add_field(name="フィールド１",value="値１") # フィールドを追加。
-	embed.add_field(name="フィールド２",value="値２")
+	embed.add_field(name="フィールド1",value="値1") # フィールドを追加。
+	embed.add_field(name="フィールド2",value="値2")
 
 	await ctx.send(embed=embed) # embedの送信には、embed={定義したembed名}
 
