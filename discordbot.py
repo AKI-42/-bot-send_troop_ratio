@@ -53,16 +53,18 @@ async def test1(ctx, *args: int):
 	await ctx.send("test5")
 	inf_heigh_t = math.floor((inf_ratio*uni)*main_troop__ratio)
 	inf_low_t = math.floor((inf_ratio*uni)*sac_troop_ratio)
-
+	await ctx.send("test6")
 	range_heigh_t = math.floor((range_ratio*uni)*main_troop__ratio)
 	range_low_t = math.floor((range_ratio*uni)*sac_troop_ratio)
-
+	await ctx.send("test7")
 	cav_heigh_t = math.floor((cav_ratio*uni)*main_troop_ratio)
 	cav_low_t = math.floor((cav_ratio*uni)*sac_troop_ratio)
-
+	await ctx.send("test8")
 	await ctx.send(f"歩兵  {inf_heigh_t:<10,}死役  {inf_low_t:<10,}  |  合計  {inf_heigh_t+inf_low_t:>10,}\n\
 弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
+	await ctx.send("test9")
+
 
 @bot.command()
 async def test(ctx, *args):
