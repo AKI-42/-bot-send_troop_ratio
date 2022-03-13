@@ -32,7 +32,7 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 	embed = discord.Embed(
 		title="死役 " + str(math.floor(10 - (main*10))) + "割",
 		color=0x00ff00,
-		description="比率 : "str(info) + " 派兵数 : " + str(max_size),
+		description="比率 : " + str(info) + " 派兵数 : " + str(max_size),
 		)
 	await ctx.send(embed=embed)
 
