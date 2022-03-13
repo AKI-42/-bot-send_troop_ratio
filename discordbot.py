@@ -30,9 +30,8 @@ async def ratio(ctx, ratio: int, max_size: int):
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
 
 @bot.command()
-async def test1(ctx, *args):
+async def test1(ctx, *args: int):
 
-	await ctx.send(args[1])
 	inf_ratio = math.floor(args[0]/100)
 	args[0] = math.floor(args[0]%100)
 	range_ratio = math.floor(args[0]/10)
@@ -41,7 +40,6 @@ async def test1(ctx, *args):
 	total = inf_ratio + range_ratio + cav_ratio
 	uni = args[1] / total
 
-	await ctx.send(len(args))
 	if len(args) == 2:
 		main_troop__ratio = 0.6
 	elif len(args) == 3:
