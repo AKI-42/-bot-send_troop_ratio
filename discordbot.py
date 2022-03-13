@@ -19,13 +19,13 @@ async def ratio(ctx, main: int, ratio: int, max_size: int):
 	uni = max_size / total
 
 	inf_heigh_t = math.floor((inf_ratio*uni)*main)
-	inf_low_t = (inf_ratio*uni) - inf_heigh_t
+	inf_low_t = math.floor((inf_ratio*uni) - inf_heigh_t)
 
 	range_heigh_t = math.floor((range_ratio*uni)*main)
-	range_low_t = (range_ratio*uni) - range_heigh_t
+	range_low_t = math.floor((range_ratio*uni) - range_heigh_t)
 
 	cav_heigh_t = math.floor((cav_ratio*uni)*main)
-	cav_low_t = (cav_ratio*uni) - cav_heigh_t
+	cav_low_t = math.floor((cav_ratio*uni) - cav_heigh_t)
 
 	await ctx.send(f"歩兵  {inf_heigh_t:<10,}死役  {inf_low_t:<10,}  |  合計  {inf_heigh_t+inf_low_t:>10,}\n\
 弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
