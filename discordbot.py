@@ -29,14 +29,16 @@ async def ratio(ctx, ratio: int, max_size: int):
 弓兵  {range_heigh_t:<10,}死役  {range_low_t:<10,}  |  合計  {range_heigh_t+range_low_t:>10,}\n\
 騎兵  {cav_heigh_t:<10,}死役  {cav_low_t:<10,}  |  合計  {cav_heigh_t+cav_low_t:>10,}")
 
+
+#/ration 424 300000 8
 @bot.command()
 async def test1(ctx, *args: int):
 
-	await ctx.send(type(args))
-	inf_ratio = math.floor(args[0]/100)
-	args[0] = math.floor(args[0]%100)
-	range_ratio = math.floor(args[0]/10)
-	cav_ratio = args[0] % 10
+	ratio_num = args[0]
+	inf_ratio = math.floor(ratio_num/100)
+	ratio_num = math.floor(ratio_num%100)
+	range_ratio = math.floor(ratio_num/10)
+	cav_ratio = ratio_num % 10
 
 	total = inf_ratio + range_ratio + cav_ratio
 	uni = args[1] / total
@@ -68,3 +70,9 @@ async def test(ctx, *args):
 
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
+
+
+""" 	inf_ratio = math.floor(args[0]/100)
+	args[0] = math.floor(args[0]%100)
+	range_ratio = math.floor(args[0]/10)
+	cav_ratio = args[0] % 10 """
