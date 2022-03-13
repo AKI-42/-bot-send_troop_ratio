@@ -35,6 +35,8 @@ async def ratio(ctx, ratio: int, max_size: int):
 async def test1(ctx, *args: int):
 
 	ratio_num = args[0]
+	await stx.send(ratio_num)
+	await stx.send(type(ratio_num))
 	inf_ratio = math.floor(ratio_num/100)
 	ratio_num = math.floor(ratio_num%100)
 	range_ratio = math.floor(ratio_num/10)
